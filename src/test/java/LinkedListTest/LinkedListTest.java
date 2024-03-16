@@ -111,4 +111,16 @@ public class LinkedListTest {
         Assertions.assertEquals(3,singleLinkedListSentinel.get(2));
         Assertions.assertThrows(IllegalArgumentException.class,()-> singleLinkedListSentinel.get(10));
     }
+
+    @Test
+    @DisplayName("递归遍历")
+    public void loop3(){
+        SingleLinkedList list = new SingleLinkedList();
+        list.addFirst(4);
+        list.addFirst(3);
+        list.addFirst(2);
+        list.addFirst(1);
+
+        list.loop3();
+    }
 }

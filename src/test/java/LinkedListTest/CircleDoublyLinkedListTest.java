@@ -48,4 +48,36 @@ public class CircleDoublyLinkedListTest {
             System.out.println(value);
         }
     }
+
+    @Test
+    @DisplayName("removeLast")
+    public void removeLast(){
+        CircleDoublyLinkedListSentinel list = new CircleDoublyLinkedListSentinel();
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+
+        list.removeLast();
+        for (int value :
+                list) {
+            System.out.println(value);
+        }
+    }
+
+    @Test
+    @DisplayName("removeByValue")
+    public void removeByValue(){
+        CircleDoublyLinkedListSentinel list = new CircleDoublyLinkedListSentinel();
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+
+        list.removeByValue(3);
+        for (int value :
+                list) {
+            System.out.println(value);
+        }
+    }
 }

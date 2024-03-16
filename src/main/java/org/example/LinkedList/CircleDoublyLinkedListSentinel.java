@@ -80,6 +80,27 @@ public class CircleDoublyLinkedListSentinel implements Iterable<Integer>{
 
     }
 
+    private Node findByValue(int value){
+        Node pointer = sentinel.next;
+        while(pointer != sentinel){
+            if(pointer.value == value){
+                return pointer;
+            }
+            pointer = pointer.next;
+        }
+        return null;
+    }
+    public void removeByValue(int value){
+        Node removed = findByValue(value);
+        if(removed == null){
+            return;
+        }
+        Node a = removed.prev;
+        Node b = removed.next;
+        a.next = b;
+        b.prev = a;
+    }
+
     private IllegalArgumentException IllegalIndex(int index) {
         return new IllegalArgumentException(String.format("index[%d] is illegal",index));
     }

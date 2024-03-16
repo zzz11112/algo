@@ -52,6 +52,23 @@ public class SingleLinkedList implements Iterable<Integer> {
         }
     }
 
+    /**
+     * 递归函数
+     * @param curr
+     */
+    private void recursion(Node curr){
+        if(curr == null){
+            return;
+        }
+        System.out.println(curr.value);
+        recursion(curr.next);
+    }
+
+    public void loop3(){
+        Node node = head;
+        recursion(node);
+    }
+
 
     /**
      * 迭代器实现
